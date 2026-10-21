@@ -1,0 +1,81 @@
+.range {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 32rem;
+    padding: 1rem 0;
+}
+
+.range__track {
+    position: relative;
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: #d4d4d8;
+}
+
+.range__fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 2px;
+    background: #18181b;
+}
+
+.range__handle {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #18181b;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #18181b;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.15s ease;
+    cursor: grab;
+    touch-action: none;
+}
+
+.range__handle:hover,
+.range__handle[data-dragging='true'] {
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+.range__handle[data-dragging='true'] {
+    cursor: grabbing;
+}
+
+.range__handle:focus-visible {
+    outline: 2px solid #2162ed;
+    outline-offset: 3px;
+}
+
+.range__label {
+    min-width: 4.5rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.range__label--min {
+    text-align: right;
+}
+
+button.range__label {
+    border: 0;
+    background: none;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    cursor: text;
+}
+
+button.range__label:hover {
+    background: #e4e4e7;
+}
+
+input.range__label {
+    width: 4.5rem;
+    padding: 0.125rem 0.25rem;
+    border: 1px solid #71717a;
+    border-radius: 0.25rem;
+}
